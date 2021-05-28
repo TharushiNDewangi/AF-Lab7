@@ -1,0 +1,104 @@
+var helpers = require("../node_modules/@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+helpers.prelude(module);
+try {
+  var _parcelHelpers = require("@parcel/transformer-js/lib/esmodule-helpers.js");
+  _parcelHelpers.defineInteropFlag(exports);
+  var _react = require('react');
+  var _reactDefault = _parcelHelpers.interopDefault(_react);
+  var _reactRouterDom = require('react-router-dom');
+  require('./Posts');
+  var _AddPost = require("./AddPost");
+  var _AddPostDefault = _parcelHelpers.interopDefault(_AddPost);
+  var _PostFunctional = require('./PostFunctional');
+  var _PostFunctionalDefault = _parcelHelpers.interopDefault(_PostFunctional);
+  var _jsxFileName = "D:\\SLIIT\\3rd year\\1st semester\\Application Framework\\lab\\lab7react\\components\\PostsHolder.jsx";
+  const posts = [{
+    id: 1,
+    name: 'React',
+    description: 'Best UI library'
+  }, {
+    id: 2,
+    name: 'Node',
+    description: 'Server side JS'
+  }];
+  class PostsHolder extends _reactDefault.default.Component {
+    constructor(props) {
+      super(props);
+    }
+    addNewPost({name, description}) {
+      posts.push({
+        id: posts.length + 1,
+        name,
+        description
+      });
+    }
+    render() {
+      return (
+        /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.BrowserRouter, {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 26,
+            columnNumber: 16
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement("switch", {
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 27,
+            columnNumber: 13
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          exact: true,
+          path: "/",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 28,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_PostFunctionalDefault.default, {
+          posts: posts,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 29,
+            columnNumber: 21
+          }
+        })), /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Route, {
+          exact: true,
+          path: "/posts/add",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 31,
+            columnNumber: 17
+          }
+        }, /*#__PURE__*/_reactDefault.default.createElement(_AddPostDefault.default, {
+          save: this.addNewPost,
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 32,
+            columnNumber: 21
+          }
+        }))), "hjjk", /*#__PURE__*/_reactDefault.default.createElement(_reactRouterDom.Link, {
+          to: "/posts/add",
+          __self: this,
+          __source: {
+            fileName: _jsxFileName,
+            lineNumber: 37,
+            columnNumber: 13
+          }
+        }, "Add"))
+      );
+    }
+  }
+  exports.default = PostsHolder;
+  helpers.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
